@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>個人主頁 | Portfolio 2026</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- 頂部導覽列 -->
+  <nav class="navbar">
+    <div class="logo">YOUR NAME</div>
+    <ul class="nav-links">
+      <li><a href="#about">關於我</a></li>
+      <li><a href="#works">代表作品</a></li>
+      <li><a href="#experience">經歷獲獎</a></li>
+      <li><a href="#contact">聯絡方式</a></li>
+    </ul>
+  </nav>
+
+  <!-- 01. Hero 首屏區 -->
+  <section class="hero-section">
+    <div class="hero-text">
+      <span class="sub-tag">PORTFOLIO 2026</span>
+      <h1>用邏輯與設計，<br>回應生活的真實問題。</h1>
+      <p>專注於科技創新、學術研究與使用者體驗設計的高中生。</p>
+      <a href="#works" class="btn-primary">查看代表作品 ↗</a>
+    </div>
+    <div class="hero-card">
+      <div class="profile-placeholder">個人照片 / 視覺意象區</div>
+    </div>
+  </section>
+
+  <!-- 02. 關於我 -->
+  <section id="about" class="section-container">
+    <h2 class="section-title">ABOUT ME <span>/ 關於我</span></h2>
+    <div class="about-grid">
+      <div class="about-desc">
+        <p>你好！我是 [你的姓名]，熱衷於透過程式與設計解決身邊的實際問題。在高中的學習歷程中，我主要專注於科技競賽、專案開發與跨領域溝通。</p>
+      </div>
+      <div class="skills-tags">
+        <span class="tag">Python</span>
+        <span class="tag">HTML / CSS / JS</span>
+        <span class="tag">UI/UX 設計</span>
+        <span class="tag">數據分析</span>
+        <span class="tag">專案管理</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- 03. 代表作品 (含分類與卡片) -->
+  <section id="works" class="section-container">
+    <h2 class="section-title">SELECTED WORKS <span>/ 代表作品</span></h2>
+    
+    <!-- 分類篩選按鈕 -->
+    <div class="filter-buttons">
+      <button class="filter-btn active" data-filter="all">全部</button>
+      <button class="filter-btn" data-filter="tech">科技競賽</button>
+      <button class="filter-btn" data-filter="academic">學術論文</button>
+      <button class="filter-btn" data-filter="club">社團成果</button>
+    </div>
+
+    <!-- 作品網格 -->
+    <div class="works-grid">
+      <!-- 作品卡片 1 -->
+      <div class="work-card" data-category="tech" onclick="openModal('work1')">
+        <div class="card-img">作品一圖片預覽</div>
+        <div class="card-info">
+          <span class="card-cat">科技競賽</span>
+          <h3>AI 智慧校園活動指南網站</h3>
+          <p>解決資訊分散痛點，建立高易用性的活動檢索平台。</p>
+        </div>
+      </div>
+
+      <!-- 作品卡片 2 -->
+      <div class="work-card" data-category="academic" onclick="openModal('work2')">
+        <div class="card-img">作品二圖片預覽</div>
+        <div class="card-info">
+          <span class="card-cat">學術論文</span>
+          <h3>高中生時間管理與學習效率小論文</h3>
+          <p>運用數據統計與訪談，探討自主學習空間規劃。</p>
+        </div>
+      </div>
+
+      <!-- 作品卡片 3 -->
+      <div class="work-card" data-category="club" onclick="openModal('work3')">
+        <div class="card-img">作品三圖片預覽</div>
+        <div class="card-info">
+          <span class="card-cat">社團成果</span>
+          <h3>資訊社週年成果展主視覺與網站設計</h3>
+          <p>負責整體視覺定義、網頁前端開發與團隊協調。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 04. 經歷與獲獎 -->
+  <section id="experience" class="section-container">
+    <h2 class="section-title">EXPERIENCE <span>/ 經歷與獲獎</span></h2>
+    <div class="timeline">
+      <div class="timeline-item">
+        <span class="time">2026.05</span>
+        <div class="timeline-content">
+          <h4>全國青少年科技創新大賽 - 佳作</h4>
+          <p>項目主導者兼前端開發，負責簡報發表與作品展演。</p>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <span class="time">2025.12</span>
+        <div class="timeline-content">
+          <h4>校內資訊社團 社長</h4>
+          <p>組織 10+ 場技術工作坊，籌辦跨校成果交流會。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 05. 聯絡方式 -->
+  <section id="contact" class="section-container contact-section">
+    <h2>LET'S CONNECT <span>/ 聯絡我</span></h2>
+    <p>如果您對我的作品或經歷感興趣，歡迎隨時透過 Email 與我聯繫！</p>
+    <a href="mailto:your.email@example.com" class="btn-primary">發送郵件聯繫 ✉</a>
+  </section>
+
+  <!-- 作品詳情 Modal 彈窗 -->
+  <div id="workModal" class="modal">
+    <div class="modal-content">
+      <span class="close-btn" onclick="closeModal()">&times;</span>
+      <h3 id="modalTitle">作品標題</h3>
+      <div class="modal-body">
+        <p><strong>項目背景：</strong><span id="modalBg">...</span></p>
+        <p><strong>我的個人貢獻 (STAR)：</strong><span id="modalContribution">...</span></p>
+        <p><strong>最終成果證明：</strong><span id="modalResult">...</span></p>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
